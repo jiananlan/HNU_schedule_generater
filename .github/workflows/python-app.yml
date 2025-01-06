@@ -30,3 +30,9 @@ jobs:
       run: |
         python A9.py
 
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: generated-files  # Artifact 的名字
+        path: output/  # 指定保存的文件或目录
+
