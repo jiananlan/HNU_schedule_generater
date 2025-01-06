@@ -69,7 +69,7 @@ del read_result
 
 
 def write_main():
-    with open('my1.ics', 'w', encoding='utf-8') as f:
+    with open('my.ics', 'w', encoding='utf-8') as f:
         f.write('''BEGIN:VCALENDAR
 VERSION:2.0
 CALSCALE:GREGORIAN
@@ -81,7 +81,7 @@ CALSCALE:GREGORIAN
 
 
 def write_shift():
-    with open('my_shift1.ics', 'w', encoding='utf-8') as f:
+    with open('my_shift.ics', 'w', encoding='utf-8') as f:
         f.write('''BEGIN:VCALENDAR
 VERSION:2.0
 CALSCALE:GREGORIAN
