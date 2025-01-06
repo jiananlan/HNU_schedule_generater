@@ -3,6 +3,10 @@ import time
 from datetime import date, datetime
 import B9
 import uuid
+import sys
+
+sys.stdout.reconfigure(encoding='utf-8')
+
 
 wb = load_workbook('data_/jwxt-pkgl-axsdykb1.xlsx')
 sheet = wb.active
