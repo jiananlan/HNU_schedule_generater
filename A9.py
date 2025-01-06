@@ -4,7 +4,7 @@ from datetime import date, datetime
 import B9
 import uuid
 
-wb = load_workbook('data/jwxt-pkgl-axsdykb1.xlsx')
+wb = load_workbook('data_/jwxt-pkgl-axsdykb1.xlsx')
 sheet = wb.active
 
 
