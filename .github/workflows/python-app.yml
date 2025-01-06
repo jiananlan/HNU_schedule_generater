@@ -23,16 +23,18 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install holidays
+        pip install openpyxl
 
-    - name: Run Python script to generate files
+    - name: Run Python script to generate ics files
       run: |
-        python your_script.py
+        python A9.py
 
     - name: Save generated files
       run: |
         mkdir -p output
-        mv generated_file.txt output/
+        mv my.ics output/
+        mv my_shift.ics output/
     - uses: actions/upload-artifact@v3
       with:
         name: output-files
