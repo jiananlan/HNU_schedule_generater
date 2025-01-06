@@ -30,12 +30,3 @@ jobs:
       run: |
         python A9.py
 
-    - name: Save generated files
-      run: |
-        mkdir -p output
-        mv my.ics output/
-        mv my_shift.ics output/
-    - uses: actions/upload-artifact@v3
-      with:
-        name: output-files
-        path: output/
