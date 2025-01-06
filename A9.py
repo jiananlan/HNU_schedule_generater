@@ -4,7 +4,7 @@ from datetime import date, datetime
 import B9
 import uuid
 
-wb = load_workbook('tst.xlsx')
+wb = load_workbook('jwxt-pkgl-axsdykb1.xlsx')
 sheet = wb.active
 
 
@@ -63,14 +63,36 @@ for row in read_result:
     print(row)
 del read_result
 
-with open('my.ics', 'w', encoding='utf-8') as f:
-    f.write('''BEGIN:VCALENDAR
+
+def write_main():
+    with open('my1.ics', 'w', encoding='utf-8') as f:
+        f.write('''BEGIN:VCALENDAR
 VERSION:2.0
 CALSCALE:GREGORIAN
 ''')
-    for r in course_list:
-        f.write(str(r))
-    f.write('END:VCALENDAR\n')
+        for row_ in course_list:
+            if not B9.is_holiday(row_.time_date):
+                f.write(str(row_))
+        f.write('END:VCALENDAR\n')
+
+
+def write_shift():
+    with open('my_shift1.ics', 'w', encoding='utf-8') as f:
+        f.write('''BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+''')
+        for row_ in course_list:
+            if row_.time_date in B9.DAY_SHIFT:
+                row_.time_date = B9.DAY_SHIFT[row_.time_date]
+                f.write(str(row_))
+        f.write('END:VCALENDAR\n')
+
+
+if __name__ == '__main__':
+    write_main()
+    write_shift()
 
 print(time.process_time())
 print(B9.error_count)
+print(f'！第一天是{B9.FIRST_DAY}')
