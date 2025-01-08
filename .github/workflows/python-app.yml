@@ -1,8 +1,6 @@
 name: Python application with file generation
 
 on:
-  push:
-    branches: [ "main" ]
   workflow_dispatch:
 
 permissions:
@@ -36,4 +34,14 @@ jobs:
       with:
         name: generated-files  # Artifact 的名字
         path: output/  # 指定保存的文件或目录
+
+    - name: Commit and push changes
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add output/
+        git commit -m "update"
+        git push origin main
 
