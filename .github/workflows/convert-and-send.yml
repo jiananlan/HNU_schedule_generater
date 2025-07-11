@@ -1,0 +1,33 @@
+name: Generate ICS from Excel
+
+on:
+  repository_dispatch:
+    types: [upload_excel]  # 你用前端 JS 触发的类型
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install holidays
+        pip install openpyxl
+        pip install wython
+
+    - name: Save uploaded Excel file from dispatch payload
+      run: |
+        echo "${{ github.event.client_payload.file_content }}" > input_excel.xlsx
+
+    - name: Run Python script to generate ics files
+      run: |
+        python A9.py
