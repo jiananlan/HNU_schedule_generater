@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>HNU课表转ICS</title>
+</head>
+<body>
+  <h1>上传课表并接收ICS</h1>
+  <form id="uploadForm">
+    <input type="email" name="email" placeholder="请输入邮箱" required><br><br>
+    <input type="file" name="file" accept=".xls,.xlsx" required><br><br>
+    <button type="submit">上传并转换</button>
+  </form>
+  <p id="status"></p>
+
+  <script>
+    document.getElementById('uploadForm').onsubmit = async function (e) {
+      e.preventDefault();
+
+      const email = this.email.value;
+      const file = this.file.files[0];
+
+      if (!file || !email) return;
+
+      document.getElementById('status').innerText = '上传中...';
+
+      const fileText = await file.text(); // 内容变成字符串
+      const response = await fetch("https://api.github.com/repos/jiananlan/HNU_schedule_generater/dispatches", {
+        method: "POST",
+        headers: {
+          "Accept": "application/vnd.github.everest-preview+json",
+          "Authorization": "Bearer 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",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          event_type: "upload_excel",
+          client_payload: {
+            email: email,
+            filename: file.name,
+            file_content: fileText
+          }
+        })
+      });
+
+      if (response.ok) {
+        document.getElementById('status').innerText = '上传成功，已开始处理，请稍候查收邮件。';
+      } else {
+        document.getElementById('status').innerText = '上传失败！请检查网络或稍后重试。';
+      }
+    };
+  </script>
+</body>
+</html>
