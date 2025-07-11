@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>课表转 ICS</title>
+</head>
+<body>
+  <h1>上传你的课表文件</h1>
+  <form id="uploadForm">
+    <input type="email" name="email" placeholder="请输入邮箱" required><br><br>
+    <input type="file" name="file" accept=".xls,.xlsx" required><br><br>
+    <button type="submit">上传并转换</button>
+  </form>
+  <p id="status"></p>
+
+  <script>
+    document.getElementById('uploadForm').onsubmit = async function (e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      document.getElementById('status').innerText = '正在上传...';
+
+      const response = await fetch("http://116.205.175.190:5000/api/upload", {
+        method: "POST",
+        body: formData
+      });
+
+      if (response.ok) {
+        document.getElementById('status').innerText = '上传成功，请查收邮件！';
+      } else {
+        document.getElementById('status').innerText = '上传失败，请稍后再试。';
+      }
+    };
+  </script>
+</body>
+</html>
