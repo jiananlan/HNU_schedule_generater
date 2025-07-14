@@ -2,7 +2,7 @@
 
 项目地址：[https://github.com/jiananlan/HNU_schedule_generater](https://github.com/jiananlan/HNU_schedule_generater)
 
-本项目用于将湖南大学教务系统导出的课表（xlsx 文件）一键转换为可导入手机日历的 `.ics` 文件，方便随时查看课程安排、手机即时提醒。
+本项目用于将湖南大学教务系统导出的课表（xlsx 文件）一键转换为可导入手机日历的 `.ics` 文件，方便**在系统日历中查看课程安排、手机上课前即时提醒、系统日历小组件快速查询**。
 
 ## 使用指南
 
