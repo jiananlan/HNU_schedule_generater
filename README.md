@@ -9,16 +9,16 @@
 1. 登录湖南大学教务系统  
 2. 点击“我的选课” → “课表查看” → “打印”导出课表为 `.xlsx` 文件  
 3. 克隆本项目，并安装依赖：
-   ```bash
+```bash
    pip install holidays
    pip install openpyxl
 ```
 
 4. 运行转换脚本：
 
-   ```bash
+```bash
    python A9.py
-   ```
+```
 5. 建议将生成的 `.ics` 文件通过邮件发送到手机，导入日历（iPhone 推荐使用默认邮箱 App）
 
 ## 在线转换（开发中）
