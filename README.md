@@ -1,4 +1,4 @@
-# 欢迎使用 HNU 课表转日历工具
+# 欢迎使用 HNU（湖南大学） 教务系统导出课表转日历工具
 
 项目地址：[https://github.com/jiananlan/HNU_schedule_generater](https://github.com/jiananlan/HNU_schedule_generater)
 
