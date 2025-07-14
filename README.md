@@ -2,7 +2,7 @@
 
 项目地址：[https://github.com/jiananlan/HNU_schedule_generater](https://github.com/jiananlan/HNU_schedule_generater)
 
-本项目用于将湖南大学教务系统导出的课表（xlsx 文件）一键转换为可导入手机日历的 `.ics` 文件，方便**在系统日历中查看课程安排、手机上课前即时提醒、系统日历小组件快速查询**。
+本项目用于将湖南大学教务系统导出的课表（xlsx 文件）一键转换为可导入手机日历的 `.ics` 文件，方便**在手机系统日历中查看课程安排、手机上课前即时提醒、系统日历小组件快速查询**。
 
 ## 使用指南
 
@@ -23,7 +23,7 @@
 
 ## 在线转换（开发中）
 
-我正在开发网页版转换功能，计划通过 GitHub Pages + 云服务器实现免下载一键转换，当前预览版本见：
+我正在开发网页版转换功能，计划通过 GitHub Pages + 云服务器实现免下载一键转换，旨在降低使用门槛，但远远没有完工。当前预览版本见：
 [https://jiananlan.github.io/HNU_schedule_generater/](https://jiananlan.github.io/HNU_schedule_generater/)
 
 欢迎感兴趣的同学通过 GitHub Issue 联系我，一起完善项目！
