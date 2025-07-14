@@ -24,7 +24,7 @@
 ## 在线转换（开发中）
 
 我正在开发网页版转换功能，计划通过 GitHub Pages + 云服务器实现免下载一键转换，当前预览版本见：
-[https://github.com/jiananlan/HNU\_schedule\_generater/blob/main/docs/index.html](https://github.com/jiananlan/HNU_schedule_generater/blob/main/docs/index.html)
+[https://jiananlan.github.io/HNU_schedule_generater/](https://jiananlan.github.io/HNU_schedule_generater/)
 
 欢迎感兴趣的同学通过 GitHub Issue 联系我，一起完善项目！
 
